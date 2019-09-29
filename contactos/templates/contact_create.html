@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Crear contacto{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <div style="text-align:center">
+      <form method='POST' action='.'>
+          {% csrf_token %}
+          <!--{{ form.as_p }}-->
+          <table align="center">
+            <tr>
+              <td colspan="3">Nombre:</td>
+            </tr>
+            <tr>
+              <td colspan="3">{{ form.name }}</td>
+            </tr><br>
+            <tr>
+              <td colspan="3">Teléfono</td>
+            </tr>
+            <tr>
+                <td>{{ form.phone }}</td>
+                <td>{{ form.phone2 }}</td>
+                <td>{{ form.phone3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.phone4 }}</td>
+                <td>{{ form.phone5 }}</td>
+                <td>{{ form.phone6 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.phone7 }}</td>
+                <td>{{ form.phone8 }}</td>
+                <td>{{ form.phone9 }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{ form.phone10 }}</td>
+            </tr>
+            <tr>
+              <td colspan="3">Email</td>
+            </tr>
+            <tr>
+                <td>{{ form.email }}</td>
+                <td>{{ form.email2 }}</td>
+                <td>{{ form.email3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.email4 }}</td>
+                <td>{{ form.email5 }}</td>
+                <td>{{ form.email6 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.email7 }}</td>
+                <td>{{ form.email8 }}</td>
+                <td>{{ form.email9 }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{ form.email10 }}</td>
+            </tr>
+            <tr>
+              <td colspan="3">Dirección</td>
+            </tr>
+            <tr>
+                <td>{{ form.address }}</td>
+                <td>{{ form.address2 }}</td>
+                <td>{{ form.address3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.address4 }}</td>
+                <td>{{ form.address5 }}</td>
+                <td>{{ form.address6 }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.address7 }}</td>
+                <td>{{ form.address8 }}</td>
+                <td>{{ form.address9 }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{{ form.address10 }}</td>
+            </tr>
+          </table>
+          <button type='submit'>Crear</button>
+      </form>
+  </div>
+
+{% else %}
+  <p>No estás conectado</p>
+{% endif %}
+{% endblock %}

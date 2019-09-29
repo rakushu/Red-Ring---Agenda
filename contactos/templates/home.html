@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <div class="col-md-6 mx-auto">
+      <br>
+      <br>
+  <p class="intro-text tag-line">Bienvenido a la agenda, puedes añadir contactos y editarlos.</p>
+  </div>
+{% else %}
+  <div class="col-md-6 mx-auto">
+      <br>
+      <br>
+  <p class="intro-text tag-line"> No estás conectado</p>
+  </div>
+{% endif %}
+{% endblock %}

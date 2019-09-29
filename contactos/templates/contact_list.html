@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Contactos{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <div class="col-md-1 mx-auto">
+      <br>
+      <br>
+
+  <a class="btn btn-info btn-md" href="{% url 'add' %}">Añadir Contacto</a>
+  </div>
+  <br>
+  <br>
+  <div class="table-responsive">
+      <table class="table">
+          <tr><td>Nombre</td><td>Detalles del Contacto</td><td>Actualizar Contacto</td><td>Borrar Contacto</td></tr>
+          {% for object in object_list %}
+          <tr><td>{{ object.name }}</td><td><a href="/contactos/detalles/{{ object.id }}">Ver</a></td><td><a href="/contactos/actualizar/{{ object.id }}"> Actualizar</a></td><td><a href="/contactos/borrar/{{ object.id }}"> Eliminar</a></td></tr>
+          {% endfor %}
+      </table>
+  </div>
+  <!--<p><a href="{% url 'logout' %}">Desconectarte</a></p>-->
+{% else %}
+  <p>No estás conectado</p>
+  <!--<a href="{% url 'login' %}">Conéctate</a>-->
+{% endif %}
+{% endblock %}

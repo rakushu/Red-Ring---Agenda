@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <div style="text-align:center">
+      <div class="container">
+          <br>
+          <br>
+          <table class="table table-dark">
+              <tr><td>Nombre</td><td>{{ object.name }}</td></tr>
+              <tr><td>Telefonos</td><td>
+                  <ul class="list-group">
+                      <li class="list-group item">{{ object.phone }}</li>
+                      <li class="list-group item">{{ object.phone2 }}</li>
+                      <li class="list-group item">{{ object.phone3 }}</li>
+                      <li class="list-group item">{{ object.phone4 }}</li>
+                      <li class="list-group item">{{ object.phone5 }}</li>
+                      <li class="list-group item">{{ object.phone6 }}</li>
+                      <li class="list-group item">{{ object.phone7 }}</li>
+                      <li class="list-group item">{{ object.phone8 }}</li>
+                      <li class="list-group item">{{ object.phone9 }}</li>
+                      <li class="list-group item">{{ object.phone10 }}</li>
+                  </ul>
+                  </td>
+              </tr>
+              <tr><td>Emails</td><td>
+                  <ul class="list-group">
+                      <li class="list-group item">{{ object.email }}</li>
+                      <li class="list-group item">{{ object.email2 }}</li>
+                      <li class="list-group item">{{ object.email3 }}</li>
+                      <li class="list-group item">{{ object.email4 }}</li>
+                      <li class="list-group item">{{ object.email5 }}</li>
+                      <li class="list-group item">{{ object.email6 }}</li>
+                      <li class="list-group item">{{ object.email7 }}</li>
+                      <li class="list-group item">{{ object.email8 }}</li>
+                      <li class="list-group item">{{ object.email9 }}</li>
+                      <li class="list-group item">{{ object.email10 }}</li>
+                  </ul>
+              </td>
+              </tr>
+              <tr><td>Direcciones</td><td>
+                  <ul class="list-group">
+                      <li class="list-group item">{{ object.address }}</li>
+                      <li class="list-group item">{{ object.address2 }}</li>
+                      <li class="list-group item">{{ object.address3 }}</li>
+                      <li class="list-group item">{{ object.address4 }}</li>
+                      <li class="list-group item">{{ object.address5 }}</li>
+                      <li class="list-group item">{{ object.address6 }}</li>
+                      <li class="list-group item">{{ object.address7 }}</li>
+                      <li class="list-group item">{{ object.address8 }}</li>
+                      <li class="list-group item">{{ object.address9 }}</li>
+                      <li class="list-group item">{{ object.address10 }}</li>
+                  </ul>
+              </td>
+              </tr>
+          </table>
+      </div>
+  </div>
+  <!--<p><a href="{% url 'logout' %}">Desconectarte</a></p>-->
+{% else %}
+  <p>No estás conectado</p>
+  <!--<a href="{% url 'login' %}">Conéctate</a>-->
+{% endif %}
+{% endblock %}

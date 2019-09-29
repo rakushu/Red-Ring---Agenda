@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Conéctate{% endblock %}
+
+{% block content %}
+<div style="text-align:center"><h2>Conéctate</h2></div>
+
+
+<div style="text-align:center">
+
+  <form method="post" id="form_login">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Conéctate</button>
+  </form></div>
+{% endblock %}
